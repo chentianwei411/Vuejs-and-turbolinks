@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Teams</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teams.each do |team| %>
+      <tr>
+        <td><%= team.title %></td>
+        <td><%= link_to 'Show', team %></td>
+        <td><%= link_to 'Edit', edit_team_path(team) %></td>
+        <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Team', new_team_path %>
+
+<div id='hello'>
+  <!-- 这是传统的使用方法，使用单文件组件后，插值和组件实例化都在但文件组件内完成了 -->
+  <!-- {{message}}
+  <app></app> -->
+</div>
